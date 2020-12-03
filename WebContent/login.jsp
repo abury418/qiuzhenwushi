@@ -205,7 +205,7 @@
 									<a href="dining-list.html" class="nozari-menu-item-title" title="Shop">特色餐厅</a>
 								</li>
 								<li class="menu-item  menu-item-has-children item-megamenu">
-									<a href="dining-list.html" class="nozari-menu-item-title" title="Pages">风味餐饮</a>
+									<a href="dining-list.jsp" class="nozari-menu-item-title" title="Pages">风味餐饮</a>
 									<span class="toggle-submenu"></span>
 									<div class="submenu mega-menu menu-page">
 										<div class="row">

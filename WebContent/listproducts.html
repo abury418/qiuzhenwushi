@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="gb2312" http-equiv=Content-Type content="text/html">
+<title>西餐吧 — 特色餐厅</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/x-icon"
 	href="assets/images/favicon.png" />
@@ -29,33 +29,32 @@
 <link rel="stylesheet" href="assets/css/mobile-menu.css">
 <link rel="stylesheet" href="assets/fonts/flaticon/flaticon.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<title>西餐吧 — 特色餐厅</title>
 </head>
 <body class="inblog-page">
 	<header class="header style7">
 		<div class="top-bar">
 			<div class="container">
 				<div class="top-bar-left">
-					<div class="header-message">欢迎来到我们的西餐厅，请尽情享受美味吧！</div>
+					<div class="header-message">Welcome to our online store!</div>
 				</div>
 				<div class="top-bar-right">
 					<div class="header-language">
 						<div class="nozari-language nozari-dropdown">
 							<a href="#" class="active language-toggle"
-								data-nozari="nozari-dropdown"> <span> 你好！ 张三 </span>
+								data-nozari="nozari-dropdown"> <span> English (USD) </span>
 							</a>
 							<ul class="nozari-submenu">
 								<li class="switcher-option"><a href="#"> <span>
-											个人空间 </span>
+											French (EUR) </span>
 								</a></li>
 								<li class="switcher-option"><a href="#"> <span>
-											退出登录 </span>
+											Japanese (JPY) </span>
 								</a></li>
 							</ul>
 						</div>
 					</div>
 					<ul class="header-user-links">
-						<li><a href="login.jsp">登录 &nbsp;&nbsp; /&nbsp;&nbsp; 注册</a></li>
+						<li><a href="login.html">Login or Register</a></li>
 					</ul>
 				</div>
 			</div>
@@ -66,7 +65,7 @@
 					<div
 						class="col-lg-3 col-sm-4 col-md-3 col-xs-7 col-ts-12 header-element">
 						<div class="logo">
-							<a href="index.html"> <img src="assets/images/logo.jpg"
+							<a href="index.html"> <img src="assets/images/logo.png"
 								alt="img">
 							</a>
 						</div>
@@ -78,23 +77,93 @@
 									<div class="category">
 										<select title="cate" data-placeholder="All Categories"
 											class="chosen-select" tabindex="1">
-											<option value="United States">五道口</option>
-											<option value="United Kingdom">六道口</option>
-											<option value="Afghanistan">大钟寺</option>
-											<option value="Aland Islands">知春路</option>
-											<option value="Albania">西直门</option>
-											<option value="Algeria">上地</option>
+											<option value="United States">Accessories</option>
+											<option value="United Kingdom">Trousers</option>
+											<option value="Afghanistan">Tables</option>
+											<option value="Aland Islands">Sofas</option>
+											<option value="Albania">New Arrivals</option>
+											<option value="Algeria">Storage</option>
 										</select>
 									</div>
 									<div class="inner">
 										<input type="text" class="input" name="s" value=""
-											placeholder="选择地址   搜索美食~">
+											placeholder="Search here">
 									</div>
 									<button class="btn-search" type="submit">
 										<span class="icon-search"></span>
 									</button>
 								</div>
 							</form>
+						</div>
+					</div>
+					<div class="col-lg-2 col-sm-12 col-md-3 col-xs-12 col-ts-12">
+						<div class="header-control">
+							<div
+								class="block-minicart nozari-mini-cart block-header nozari-dropdown">
+								<a href="javascript:void(0);" class="shopcart-icon"
+									data-nozari="nozari-dropdown"> Cart <span class="count">
+										0 </span>
+								</a>
+								<div class="no-product nozari-submenu">
+									<p class="text">
+										You have <span> 0 item(s) </span> in your bag
+									</p>
+								</div>
+							</div>
+							<div class="block-account block-header nozari-dropdown">
+								<a href="javascript:void(0);" data-nozari="nozari-dropdown">
+									<span class="flaticon-user"></span>
+								</a>
+								<div class="header-account nozari-submenu">
+									<div class="header-user-form-tabs">
+										<ul class="tab-link">
+											<li class="active"><a data-toggle="tab"
+												aria-expanded="true" href="#header-tab-login">Login</a></li>
+											<li><a data-toggle="tab" aria-expanded="true"
+												href="#header-tab-rigister">Register</a></li>
+										</ul>
+										<div class="tab-container">
+											<div id="header-tab-login" class="tab-panel active">
+												<form method="post" class="login form-login">
+													<p class="form-row form-row-wide">
+														<input type="email" placeholder="Email" class="input-text">
+													</p>
+													<p class="form-row form-row-wide">
+														<input type="password" class="input-text"
+															placeholder="Password">
+													</p>
+													<p class="form-row">
+														<label class="form-checkbox"> <input
+															type="checkbox" class="input-checkbox"> <span>
+																Remember me </span>
+														</label> <input type="submit" class="button" value="Login">
+													</p>
+													<p class="lost_password">
+														<a href="#">Lost your password?</a>
+													</p>
+												</form>
+											</div>
+											<div id="header-tab-rigister" class="tab-panel">
+												<form method="post" class="register form-register">
+													<p class="form-row form-row-wide">
+														<input type="email" placeholder="Email" class="input-text">
+													</p>
+													<p class="form-row form-row-wide">
+														<input type="password" class="input-text"
+															placeholder="Password">
+													</p>
+													<p class="form-row">
+														<input type="submit" class="button" value="Register">
+													</p>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a class="menu-bar mobile-navigation menu-toggle" href="#"> <span></span>
+								<span></span> <span></span>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -106,19 +175,71 @@
 					<div class="vertical-wapper block-nav-categori">
 						<div class="block-title">
 							<span class="icon-bar"> <span></span> <span></span> <span></span>
-							</span> <span class="text">享受美好食光</span>
+							</span> <span class="text">All Categories</span>
+						</div>
+						<div class="block-content verticalmenu-content">
+							<ul
+								class="nozari-nav-vertical vertical-menu nozari-clone-mobile-menu">
+								<li class="menu-item"><a href="#"
+									class="nozari-menu-item-title" title="New Arrivals">New
+										Arrivals</a></li>
+								<li class="menu-item"><a title="Hot Sale" href="#"
+									class="nozari-menu-item-title">Hot Sale</a></li>
+								<li class="menu-item menu-item-has-children"><a
+									title="Accessories" href="#" class="nozari-menu-item-title">Accessories</a>
+									<span class="toggle-submenu"></span>
+									<ul role="menu" class=" submenu">
+										<li class="menu-item"><a title="Watches" href="#"
+											class="nozari-item-title">Watches</a></li>
+										<li class="menu-item"><a title="Trousers" href="#"
+											class="nozari-item-title">Trousers</a></li>
+										<li class="menu-item"><a title="New Arrivals" href="#"
+											class="nozari-item-title">New Arrivals</a></li>
+										<li class="menu-item"><a title="Accessories" href="#"
+											class="nozari-item-title">Accessories</a></li>
+										<li class="menu-item"><a title="Storage" href="#"
+											class="nozari-item-title">Storage</a></li>
+									</ul></li>
+								<li class="menu-item"><a title="Trousers" href="#"
+									class="nozari-menu-item-title">Trousers</a></li>
+								<li class="menu-item"><a title="Bags" href="#"
+									class="nozari-menu-item-title">Bags</a></li>
+								<li class="menu-item"><a title="Shoes" href="#"
+									class="nozari-menu-item-title">Shoes</a></li>
+								<li class="menu-item"><a title="Women" href="#"
+									class="nozari-menu-item-title">Women</a></li>
+								<li class="menu-item"><a title="Men" href="#"
+									class="nozari-menu-item-title">Men</a></li>
+							</ul>
 						</div>
 					</div>
 					<div class="header-nav">
 						<div class="container-wapper">
 							<ul class="nozari-clone-mobile-menu nozari-nav main-menu "
 								id="menu-main-menu">
-								<li class="menu-item"><a href="index.jsp"
-									class="nozari-menu-item-title" title="Home">首页</a></li>
-								<li class="menu-item"><a href="dining-list.html"
-									class="nozari-menu-item-title" title="Shop">特色餐厅</a></li>
+								<li class="menu-item  menu-item-has-children"><a
+									href="index.html" class="nozari-menu-item-title" title="Home">Home</a>
+									<span class="toggle-submenu"></span>
+									<ul class="submenu">
+										<li class="menu-item"><a href="index.html">Home 01</a></li>
+										<li class="menu-item"><a href="home2.html">Home 02</a></li>
+										<li class="menu-item"><a href="home3.html">Home 03</a></li>
+									</ul></li>
+								<li class="menu-item menu-item-has-children"><a
+									href="gridproducts.html" class="nozari-menu-item-title"
+									title="Shop">Shop</a> <span class="toggle-submenu"></span>
+									<ul class="submenu">
+										<li class="menu-item"><a href="gridproducts.html">Grid
+												Fullwidth</a></li>
+										<li class="menu-item"><a
+											href="gridproducts_leftsidebar.html">Grid Left sidebar</a></li>
+										<li class="menu-item"><a
+											href="gridproducts_bannerslider.html">Grid Bannerslider</a></li>
+										<li class="menu-item"><a href="listproducts.html">List</a>
+										</li>
+									</ul></li>
 								<li class="menu-item  menu-item-has-children item-megamenu">
-									<a href="#" class="nozari-menu-item-title" title="Pages">风味餐饮</a>
+									<a href="#" class="nozari-menu-item-title" title="Pages">Pages</a>
 									<span class="toggle-submenu"></span>
 									<div class="submenu mega-menu menu-page">
 										<div class="row">
@@ -168,7 +289,7 @@
 								</li>
 								<li class="menu-item  menu-item-has-children"><a
 									href="inblog_right-siderbar.html"
-									class="nozari-menu-item-title" title="Blogs">购物车</a> <span
+									class="nozari-menu-item-title" title="Blogs">Blogs</a> <span
 									class="toggle-submenu"></span>
 									<ul class="submenu">
 										<li class="menu-item menu-item-has-children"><a href="#"
@@ -193,7 +314,7 @@
 											</ul></li>
 									</ul></li>
 								<li class="menu-item"><a href="about.html"
-									class="nozari-menu-item-title" title="About">我的订单</a></li>
+									class="nozari-menu-item-title" title="About">About</a></li>
 							</ul>
 						</div>
 					</div>
