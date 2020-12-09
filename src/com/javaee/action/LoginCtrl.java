@@ -31,15 +31,17 @@ public class LoginCtrl extends baseControl {
 		user.setUserName(username);
 		user.setUserPassword(password);
 		UserServImpl userserv = (UserServImpl) DAOFactory.newInstance("IUserServ");
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("dinings.jsp");
 		if (userserv.validateUser(user)) {// 验证通过
 			IDiningServ diningserv = (IDiningServ) DAOFactory.newInstance("IDiningServ");
-			ArrayList<Dining> dininglist = diningserv.findDish4PageList(1, 3);
+			ArrayList<Dining> dininglist = diningserv.findDining4PageList(1, 5);
+			request.setAttribute("dininglist", dininglist);
 			logger.debug(dininglist);
 			int totalRecords = diningserv.getTotalRecords();
 			PageModel<Dining> pageModel = new PageModel<Dining>(totalRecords,1,3,dininglist);
 			request.setAttribute("pageModel", pageModel);
-			request.setAttribute("loginuser", user);
+			//request.setAttribute("loginuser", user);
+			request.getSession().setAttribute("user", user);
 			// 跳转到show.jsp页面
 			rd.forward(request, response);
 		} else {// 验证失败
@@ -65,11 +67,13 @@ public class LoginCtrl extends baseControl {
 		
 		if (userserv.validateMail(user)==null) {// 邮箱未被注册过
 			request.setAttribute("registeruser", user);
+			request.getSession().setAttribute("registeruser", user);
 			// 跳转到index.jsp页面
 			rd.forward(request, response);
 		} else {// 验证失败
-			JOptionPane.showMessageDialog(null, "邮箱已被注册过！", "注册失败", JOptionPane.WARNING_MESSAGE);
-			request.setAttribute("", "邮箱已存在！");
+			System.out.println("邮箱已存在！");
+			//JOptionPane.showMessageDialog(null, "邮箱已被注册过！", "注册失败", JOptionPane.WARNING_MESSAGE);
+			//request.setAttribute("", "邮箱已存在！");
 			response.sendRedirect("login.jsp");
 		}
 	}
@@ -80,13 +84,14 @@ public class LoginCtrl extends baseControl {
 	private void PageList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int pageNo = Integer.parseInt(request.getParameter("PageNo"));
 		IDiningServ diningserv = (IDiningServ) DAOFactory.newInstance("IDiningServ");
-		ArrayList<Dining> dininglist = diningserv.findDish4PageList(pageNo, 3);
+		ArrayList<Dining> dininglist = diningserv.findDining4PageList(pageNo, 3);
+		request.setAttribute("dininglist", dininglist);
 		logger.debug(dininglist);
 		int totalRecords = diningserv.getTotalRecords();
 		PageModel<Dining> pageModel = new PageModel<Dining>(totalRecords,pageNo,3,dininglist);
 		request.setAttribute("pageModel", pageModel);
 		// 跳转到show.jsp页面
-		RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/dinings.jsp");
 		rd.forward(request, response);
 	}
 	

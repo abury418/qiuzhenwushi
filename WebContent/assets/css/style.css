@@ -4507,7 +4507,7 @@ ul.list-products {
 	display: inline-block;
 	float: left;
 	font-family: FontAwesome;
-	content: "\f006\f006\f006\f006\f006";
+	/* content: "\f006\f006\f006\f006\f006"; */
 	font-size: 13px;
 	line-height: 13px;
 	color: #ffb933;
