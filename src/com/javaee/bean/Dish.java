@@ -3,15 +3,30 @@ package com.javaee.bean;
 public class Dish {
 
 	private int DishId;
+	private int DiningId;//所属餐厅
 	private String DishName;
 	private String DishPic;
 	private float DishPrice;
 	private int DishSale;//销量
+	private float DishMarks;
 	private int DishStock;//库存
 	private String DishDetails;
-	private String DiningId;//所属餐厅
+	
 	private float VipDiscount;//会员折扣
 	
+	
+	public float getDishMarks() {
+		return DishMarks;
+	}
+	public String getDishIdS() {
+		return Integer.toString(DishId);
+	}
+	public void setDishMarks(float dishMarks) {
+		DishMarks = dishMarks;
+	}
+	public void setDishSale(int dishSale) {
+		DishSale = dishSale;
+	}
 	
 	public int getDishId() {
 		return DishId;
@@ -55,10 +70,10 @@ public class Dish {
 	public void setDishDetails(String dishDetails) {
 		DishDetails = dishDetails;
 	}
-	public String getDiningId() {
+	public int getDiningId() {
 		return DiningId;
 	}
-	public void setDiningId(String diningId) {
+	public void setDiningId(int diningId) {
 		DiningId = diningId;
 	}
 	public float getVipDiscount() {
@@ -67,12 +82,13 @@ public class Dish {
 	public void setVipDiscount(float vipDiscount) {
 		VipDiscount = vipDiscount;
 	}
-	
 	@Override
 	public String toString() {
-		return "Dish [DishId=" + DishId + ", DishName=" + DishName + ", DishPic=" + DishPic + ", DishPrice=" + DishPrice
-				+ ", DishSale=" + DishSale + ", DishStock=" + DishStock + ", DishDetails=" + DishDetails + ", DiningId="
-				+ DiningId + ", VipDiscount=" + VipDiscount + "]";
+		return "Dish [DishId=" + DishId + ", DiningId=" + DiningId + ", DishName=" + DishName + ", DishPic=" + DishPic
+				+ ", DishPrice=" + DishPrice + ", DishSale=" + DishSale + ", DishMarks=" + DishMarks + ", DishStock="
+				+ DishStock + ", DishDetails=" + DishDetails + ", VipDiscount=" + VipDiscount + "]";
 	}
+	
+	
 
 }

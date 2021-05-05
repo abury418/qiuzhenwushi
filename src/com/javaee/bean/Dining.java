@@ -2,18 +2,22 @@ package com.javaee.bean;
 
 public class Dining {
 	
-	private String DiningId;
+	private int DiningId;
 	private String DiningName;
 	private String DiningPic;
 	private String DiningPhone;
 	private String DiningAddress;
 	private int DiningClick;
 	private float DistributeMoney;
-	
-	public String getDiningId() {
+	private String DiningPlace;
+
+	public int getDiningId() {
 		return DiningId;
 	}
-	public void setDiningId(String diningId) {
+	public String getDiningIdS() {
+		return Integer.toString(DiningId);
+	}
+	public void setDiningId(int diningId) {
 		DiningId = diningId;
 	}
 	public String getDiningName() {
@@ -59,6 +63,5 @@ public class Dining {
 				+ ", DiningPhone=" + DiningPhone + ", DiningAddress=" + DiningAddress + ", DiningClick=" + DiningClick
 				+ ", DistributeMoney=" + DistributeMoney + "]";
 	}
-
 	
 }

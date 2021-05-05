@@ -7,7 +7,10 @@ public class User {
 	public int UserId;
 	public String UserName;
 	public String UserPassword;
+	public String UserPhone;
 	public String UserMail;
+	public String UserImage;
+	public String UserBrief;
 	
 	public int getUserId() {
 		return UserId;
@@ -33,13 +36,28 @@ public class User {
 	public void setUserMail(String userMail) {
 		UserMail = userMail;
 	}
-	
-	
+	public String getUserImage() {
+		return UserImage;
+	}
+	public void setUserImage(String userImage) {
+		UserImage = userImage;
+	}
+	public String getUserPhone() {
+		return UserPhone;
+	}
+	public void setUserPhone(String userPhone) {
+		UserPhone = userPhone;
+	}
+	public String getUserBrief() {
+		return UserBrief;
+	}
+	public void setUserBrief(String userBrief) {
+		UserBrief = userBrief;
+	}
 	@Override
 	public String toString() {
-		return "useraccount [UserId=" + UserId + ", UserName=" + UserName + ", UserPassword=" + UserPassword + ", UserMail="
-				+ UserMail + "]";
+		return "User [UserId=" + UserId + ", UserName=" + UserName + ", UserPassword=" + UserPassword + ", UserPhone="
+				+ UserPhone + ", UserMail=" + UserMail + ", UserImage=" + UserImage + ", UserBrief=" + UserBrief + "]";
 	}
-	
 	
 }

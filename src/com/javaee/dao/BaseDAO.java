@@ -45,7 +45,6 @@ public abstract class BaseDAO {
 		return null;
 	}
 
-
 	private Object MappingObj(ResultSet rs, Class clazz) throws SQLException {
 		// 实例化对象
 		Object obj = null;
@@ -106,6 +105,22 @@ public abstract class BaseDAO {
 	
 	public int getTotalRecords(String sql){
 		int count = 0;
+		try {
+			Connection conn = JDBCUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				count = rs.getInt(1);
+			}
+			JDBCUtils.free(rs, ps, conn);
+		}catch (SQLException e) {
+				e.printStackTrace();
+		}
+		return count;
+	}
+	
+	public float getTotalPays(String sql){
+		float count = 0;
 		try {
 			Connection conn = JDBCUtils.getConnection();
 			PreparedStatement ps = conn.prepareStatement(sql);

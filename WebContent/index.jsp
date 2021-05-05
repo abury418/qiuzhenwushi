@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
+	import="com.javaee.bean.User"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="gb2312" http-equiv=Content-Type content="text/html">
-<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png"/>
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/logo.jpg"/>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -22,28 +23,40 @@
 <link rel="stylesheet" href="assets/css/mobile-menu.css">
 <link rel="stylesheet" href="assets/fonts/flaticon/flaticon.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<title>欢迎来到西餐吧~</title>
+
+<title>求珍小铺</title>
 </head>
 <body class="home">
-	<header class="header style7">
+		<header class="header style7">
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-left">
                 <div class="header-message">
-                   	 欢迎来到我们的西餐厅，请尽情享受美味吧！
+                   	 欢迎来到求珍小铺
                 </div>
             </div>
             <div class="top-bar-right">
                 <div class="header-language">
                     <div class="nozari-language nozari-dropdown">
                         <a href="#" class="active language-toggle" data-nozari="nozari-dropdown">
-									<span>
-										你好！ 张三
-									</span>
+                        <%
+                        	User user = new User();
+                        	if(request.getSession().getAttribute("user")==null){
+                        		user.setUserName("未登录！");
+                        	}
+                        	else{
+                        		user=(User)request.getSession().getAttribute("user");
+                        %>
+                        <span>你好！</span>
+						<%
+                        	}
+						%>
+						<span><%=user.getUserName()%></span>
+
                         </a>
                         <ul class="nozari-submenu">
                             <li class="switcher-option">
-                                <a href="#">
+                                <a href="./showctrl?action=tomyhome&UserId=<%=user.getUserId() %>">
 											<span>
 												个人空间
 											</span>
@@ -72,8 +85,8 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-4 col-md-3 col-xs-7 col-ts-12 header-element">
                     <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/logo.jpg" alt="img">
+                        <a href="index.jsp">
+                            <img src="images/logo.png" alt="img" style="width:20%;height:20%;margin-left:30px">
                         </a>
                     </div>
                 </div>
@@ -84,16 +97,14 @@
                                 <div class="category">
                                     <select title="cate" data-placeholder="All Categories" class="chosen-select"
                                             tabindex="1">
-                                        <option value="United States">五道口</option>
-										<option value="United Kingdom">六道口</option>
-										<option value="Afghanistan">大钟寺</option>
-										<option value="Aland Islands">知春路</option>
-										<option value="Albania">西直门</option>
-										<option value="Algeria">上地</option>
+                                        <option value="biaoben">标本</option>
+										<option value="dizhi">地质用品</option>
+										<option value="gongyipin">工艺品</option>
+										<option value="other">其它</option>
                                     </select>
                                 </div>
                                 <div class="inner">
-                                    <input type="text" class="input" name="s" value="" placeholder="选择地址   搜索美食~">
+                                    <input type="text" class="input" name="s" value="" placeholder="搜索">
                                 </div>
                                 <button class="btn-search" type="submit">
                                     <span class="icon-search"></span>
@@ -115,7 +126,7 @@
 								<span></span>
 								<span></span>
 							</span>
-                        <span class="text">享受美好食光</span>
+                        <span class="text">求珍小铺</span>
                     </div>
                 </div>
                 <div class="header-nav">
@@ -125,96 +136,28 @@
                                 <a href="index.jsp" class="nozari-menu-item-title" title="Home">首页</a>
                             </li>
                             <li class="menu-item">
-                                <a href="dinings.jsp" class="nozari-menu-item-title" title="Shop">特色餐厅</a>
+                                <a href="showctrl?action=todinings" class="nozari-menu-item-title" title="Shop">全部商品</a>
+                                
                             </li>
-                            <li class="menu-item  menu-item-has-children item-megamenu">
-                                <a href="#" class="nozari-menu-item-title" title="Pages">风味餐饮</a>
-                                <span class="toggle-submenu"></span>
-                                <div class="submenu mega-menu menu-page">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 menu-page-item">
-                                            <div class="nozari-custommenu default">
-                                                <h2 class="widgettitle">Shop Pages</h2>
-                                                <ul class="menu">
-                                                    <li class="menu-item">
-                                                        <a href="shoppingcart.html">Shopping Cart</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a href="checkout.html">Checkout</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a href="contact.html">Contact us</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a href="404page.html">404</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a href="login.html">Login/Register</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 menu-page-item">
-                                            <div class="nozari-custommenu default">
-                                                <h2 class="widgettitle">Product</h2>
-                                                <ul class="menu">
-                                                    <li class="menu-item">
-                                                        <a href="productdetails-fullwidth.html">Product Fullwidth</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a href="productdetails-leftsidebar.html">Product left
-                                                            sidebar</a>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <a href="productdetails-rightsidebar.html">Product right
-                                                            sidebar</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 menu-page-item">
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 menu-page-item">
-                                        </div>
-                                    </div>
-                                </div>
+                            <li class="menu-item  ">
+                                <a href="map.jsp" class="nozari-menu-item-title" title="Pages">按分类查看</a>
+                       
                             </li>
-                            <li class="menu-item  menu-item-has-children">
-                                <a href="inblog_right-siderbar.html" class="nozari-menu-item-title"
-                                   title="Blogs">购物车</a>
-                                <span class="toggle-submenu"></span>
-                                <ul class="submenu">
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="#" class="nozari-menu-item-title" title="Blog Style">Blog Style</a>
-                                        <span class="toggle-submenu"></span>
-                                        <ul class="submenu">
-                                            <li class="menu-item">
-                                                <a href="bloggrid.html">Grid</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="bloglist.html">List</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="bloglist-leftsidebar.html">List Sidebar</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="#" class="nozari-menu-item-title" title="Post Layout">Post Layout</a>
-                                        <span class="toggle-submenu"></span>
-                                        <ul class="submenu">
-                                            <li class="menu-item">
-                                                <a href="inblog_left-siderbar.html">Left Sidebar</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="inblog_right-siderbar.html">Right Sidebar</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                            <li class="menu-item  ">
+                              
+                                    <a href="loginctrl?action=tomycart&UserId=<%=user.getUserId() %>" class="nozari-menu-item-title" title="About">购物车</a>
+                           
+                              
                             </li>
                             <li class="menu-item">
-                                <a href="about.html" class="nozari-menu-item-title" title="About">我的订单</a>
+                            <!-- gotomycart -->
+  
+                          
+                             
+                                  <a href="./loginctrl?action=showorders&UserId=<%=user.getUserId() %>" class="nozari-menu-item-title"
+                                   title="Blogs">我的订单</a>
+                               
+                        
                             </li>
                         </ul>
                     </div>
@@ -223,84 +166,7 @@
         </div>
     </div>
 </header>
-<div class="header-device-mobile">
-    <div class="wapper">
-        <div class="item mobile-logo">
-            <div class="logo">
-                <a href="#">
-                    <img src="assets/images/logo.png" alt="img">
-                </a>
-            </div>
-        </div>
-        <div class="item item mobile-search-box has-sub">
-            <a href="#">
-						<span class="icon">
-							<i class="fa fa-search" aria-hidden="true"></i>
-						</span>
-            </a>
-            <div class="block-sub">
-                <a href="#" class="close">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </a>
-                <div class="header-searchform-box">
-                    <form class="header-searchform">
-                        <div class="searchform-wrap">
-                            <input type="text" class="search-input" placeholder="Enter keywords to search...">
-                            <input type="submit" class="submit button" value="Search">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="item mobile-settings-box has-sub">
-            <a href="#">
-						<span class="icon">
-							<i class="fa fa-cog" aria-hidden="true"></i>
-						</span>
-            </a>
-            <div class="block-sub">
-                <a href="#" class="close">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </a>
-                <div class="block-sub-item">
-                    <h5 class="block-item-title">Currency</h5>
-                    <form class="currency-form nozari-language">
-                        <ul class="nozari-language-wrap">
-                            <li class="active">
-                                <a href="#">
-											<span>
-												English (USD)
-											</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-											<span>
-												French (EUR)
-											</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-											<span>
-												Japanese (JPY)
-											</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="item menu-bar">
-            <a class=" mobile-navigation  menu-toggle" href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
-        </div>
-    </div>
-</div>
+
 <div>
     <div class="fullwidth-template">
         <div class="home-slider-banner">
@@ -315,19 +181,19 @@
                                     <div class="slider-inner equal-element">
                                         <div class="slider-infor">
                                             <h5 class="title-small">
-                                               	 菜品新鲜 服务到位!
+                                               	推荐
                                             </h5>
-                                            <h3 class="title-big">
-                                                Shirred linen minimal dress
+                                            <h3 class="title-big" style="color:#fff">
+                                                恐龙标本化石模型
                                             </h3>
                                             <div class="price">
-                                                New Price:
+                                                折扣价：
                                                 <span class="number-price">
-														$270.00
+														￥20.00
 													</span>
                                             </div>
-                                            <a href="#" class="button btn-browse">Browse</a>
-                                            <a href="#" class="button btn-shop-the-look bgroud-style">Shop now</a>
+                                            <a href="#" class="button btn-browse">浏览</a>
+                                            <a href="#" class="button btn-shop-the-look bgroud-style">现在购买</a>
                                         </div>
                                     </div>
                                 </div>
@@ -335,18 +201,18 @@
                                     <div class="slider-inner equal-element">
                                         <div class="slider-infor">
                                             <h5 class="title-small">
-                                                Black Friday Sale!
+                                                 折扣 
                                             </h5>
-                                            <h3 class="title-big">
-                                                long oversized brushed scarf
+                                            <h3 class="title-big" style="color:#fff">
+                                              鲨鱼牙标本套盒
                                             </h3>
                                             <div class="price">
-                                                Save Price:
+                                                促销价:
                                                 <span class="number-price">
-														$170.00
+														￥33.00
 													</span>
                                             </div>
-                                            <a href="#" class="button btn-shop-product">Shop now</a>
+                                            <a href="#" class="button btn-shop-product">现在购买</a>
                                         </div>
                                     </div>
                                 </div>
@@ -354,28 +220,34 @@
                                     <div class="slider-inner equal-element">
                                         <div class="slider-infor">
                                             <h5 class="title-small">
-                                                Nozari Best Collection
+                                               推荐
                                             </h5>
-                                            <h3 class="title-big">
-                                                The inspiration behind our store
+                                            <h3 class="title-big" style="color:#fff">
+                                            史前化石冰箱贴
                                             </h3>
-                                            <a href="#" class="button btn-chekout">Shop now</a>
+                                            <div class="price">
+                                                促销价:
+                                                <span class="number-price">
+														￥33.00
+													</span>
+                                            </div>
+                                            <a href="#" class="button btn-chekout">现在购买</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 banner-wrapp">
+                   <!--  --> <div class="col-lg-4 banner-wrapp">
                         <div class="banner">
                             <div class="item-banner style7">
                                 <div class="inner">
                                     <div class="banner-content">
-                                        <h3 class="title">T-Shirts Collection</h3>
+                                        <h3 class="title">蓝色蕾丝玛瑙</h3>
                                         <div class="description">
-                                            Adipiscing elit curabitur senectus sem
+                                            标本精选
                                         </div>
-                                        <a href="#" class="button btn-lets-do-it">Shop now</a>
+                                        <a href="#" class="button btn-lets-do-it">现在购买</a>
                                     </div>
                                 </div>
                             </div>
@@ -384,11 +256,11 @@
                             <div class="item-banner style8">
                                 <div class="inner">
                                     <div class="banner-content">
-                                        <h3 class="title">Men Winnter Best Seller</h3>
-                                        <div class="description">
-                                            Cras pulvinar lorem ipsum dolor conse
+                                        <h3 class="title">编织草帽遮阳防晒</h3>
+                                        <div class="description" >
+                                            出野外神器
                                         </div>
-                                        <span class="price">$379.00</span>
+                                        <span class="price">￥20.00</span>
                                     </div>
                                 </div>
                             </div>
@@ -408,10 +280,10 @@
                                 </div>
                                 <div class="content">
                                     <h4 class="title">
-                                        Free Delivery
+                                        急速配送
                                     </h4>
                                     <div class="text">
-                                        On order over $90.00
+                                        半小时内送达！
                                     </div>
                                 </div>
                             </div>
@@ -425,10 +297,10 @@
                                 </div>
                                 <div class="content">
                                     <h4 class="title">
-                                        Money Guarantee
+                                       价格实惠
                                     </h4>
                                     <div class="text">
-                                        30 Days money back!
+                                        质量保证
                                     </div>
                                 </div>
                             </div>
@@ -442,10 +314,10 @@
                                 </div>
                                 <div class="content">
                                     <h4 class="title">
-                                        Online Support 24/7
+                                        24小时服务
                                     </h4>
                                     <div class="text">
-                                        We’re Always here!
+                                        我们一直在这里！
                                     </div>
                                 </div>
                             </div>
@@ -454,10 +326,61 @@
                 </div>
             </div>
         </div>
-        <div class="nozari-product produc-featured rows-space-65">
+       
+      
+    </div>
+</div>
+
+	<div >
+	  
+		<div >
+			<div class="newsletter-wrapp">
+			    <div class="nozari-newsletter style3">
+			        <div class="container">
+			            <div class="newsletter-head">
+			                <h3 class="title">优惠促销</h3>
+			                <div class="subtitle" style="color:#fff;">
+			                    折扣<br/>
+			                      更多选择，更低价格
+			                </div>
+			            </div>
+						<br>
+			       
+						<a href="product grid.html" id="view" class="button btn-shop-the-look bgroud-style" style="width: 200px;">现在去买</a>
+			        </div>
+			    </div>
+			</div>
+			<!-- 图片改 -->
+			<div class="prada-left">
+				<div class="prada-left1"> 
+					<div class="prada-left-child">
+						<p style="line-height: 23px; color: #000;font-weight:700;">恐龙头骨摆件</p> 
+						<p style="line-height: 23px; color: #000;font-weight: 700; ">￥30</p>
+					</div>
+				</div>
+				<div class="prada-left2">
+				</div>
+				<div class="prada-left3">
+					<div class="prada-left-child">
+						<p style="line-height: 23px; color: #000;font-weight:700;">史前化石冰箱贴</p> 
+						<p style="line-height: 23px; color: #000;font-weight: 700; ">￥188</p>
+					</div>
+				</div>
+				<div class="prada-left4">
+					<div class="wrapper-text-left">
+				        <h1><a href="product grid.html"  style="text-decoration: none;font-size: 1.6em; ">合成萤石</a></h1>
+				        <p><a href="product grid.html" style="background-color: rgb(255,255,255);font-size: 1.4em;text-decoration: underline; color: #000000; ">点击选购</a><br /></p>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	<br/><br/><br/><br/><br/>
+	<div class="nozari-product produc-featured rows-space-65">
             <div class="container">
                 <h3 class="custommenu-title-blog">
-                    Deal of the day
+                    标本大赏
                 </h3>
                 <div class="owl-products owl-slick equal-container nav-center"
                      data-slick='{"autoplay":false, "autoplaySpeed":1000, "arrows":false, "dots":true, "infinite":false, "speed":800, "rows":1}'
@@ -468,7 +391,7 @@
                                 <div class="flash">
                                     <span class="onnew">
                                         <span class="text">
-                                            new
+                                            新品折扣
                                         </span>
                                     </span>
                                 </div>
@@ -476,17 +399,17 @@
                             <div class="product-thumb">
                                 <div class="thumb-inner">
                                     <a href="#">
-                                        <img src="assets/images/product-item-17.jpg" alt="img">
+                                        <img src="images/products/biaoben/簇状石英.jpg" alt="img">
                                     </a>
                                     <div class="thumb-group">
                                         <div class="yith-wcwl-add-to-wishlist">
                                             <div class="yith-wcwl-add-button">
-                                                <a href="#">Add to Wishlist</a>
+                                                <a href="#">加入购物车</a>
                                             </div>
                                         </div>
-                                        <a href="#" class="button quick-wiew-button">Quick View</a>
+                                        <a href="#" class="button quick-wiew-button">浏览</a>
                                         <div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">Add to cart</button>
+                                            <button class="single_add_to_cart_button button">加入购物车</button>
                                         </div>
                                     </div>
                                 </div>
@@ -497,23 +420,23 @@
                             </div>
                             <div class="product-info">
                                 <h5 class="product-name product_title">
-                                    <a href="#">Long Sleeve Midi</a>
+                                    <a href="#">簇状石英</a>
                                 </h5>
                                 <div class="group-info">
                                     <div class="stars-rating">
                                         <div class="star-rating">
-                                            <span class="star-3"></span>
+                                            <span class="star-5"></span>
                                         </div>
                                         <div class="count-star">
-                                            (3)
+                                            (5)
                                         </div>
                                     </div>
                                     <div class="price">
                                         <del>
-                                            $65
+                                            ￥65
                                         </del>
                                         <ins>
-                                            $45
+                                            ￥45
                                         </ins>
                                     </div>
                                 </div>
@@ -524,38 +447,38 @@
                         <div class="product-inner equal-element">
                             <div class="product-top">
                                 <div class="flash">
-											<span class="onnew">
-												<span class="text">
-													new
-												</span>
-											</span>
+                                    <span class="onnew">
+                                        <span class="text">
+                                            新品折扣
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                             <div class="product-thumb">
                                 <div class="thumb-inner">
                                     <a href="#">
-                                        <img src="assets/images/product-item-21.jpg" alt="img">
+                                        <img src="images/products/biaoben/合成萤石.jpg" alt="img">
                                     </a>
                                     <div class="thumb-group">
                                         <div class="yith-wcwl-add-to-wishlist">
                                             <div class="yith-wcwl-add-button">
-                                                <a href="#">Add to Wishlist</a>
+                                                <a href="#">加入购物车</a>
                                             </div>
                                         </div>
-                                        <a href="#" class="button quick-wiew-button">Quick View</a>
+                                        <a href="#" class="button quick-wiew-button">浏览</a>
                                         <div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">Add to cart</button>
+                                            <button class="single_add_to_cart_button button">加入购物车</button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="product-count-down">
-                                    <div class="nozari-countdown" data-y="2020" data-m="9" data-w="2" data-d="30"
-                                         data-h="20" data-i="60" data-s="60"></div>
+                                    <div class="nozari-countdown" data-y="2020" data-m="10" data-w="4" data-d="10"
+                                         data-h="20" data-i="20" data-s="60"></div>
                                 </div>
                             </div>
                             <div class="product-info">
                                 <h5 class="product-name product_title">
-                                    <a href="#">Long Sleeve Midi</a>
+                                    <a href="#">合成萤石</a>
                                 </h5>
                                 <div class="group-info">
                                     <div class="stars-rating">
@@ -568,10 +491,10 @@
                                     </div>
                                     <div class="price">
                                         <del>
-                                            $65
+                                            ￥89
                                         </del>
                                         <ins>
-                                            $45
+                                            ￥77.9
                                         </ins>
                                     </div>
                                 </div>
@@ -582,54 +505,54 @@
                         <div class="product-inner equal-element">
                             <div class="product-top">
                                 <div class="flash">
-											<span class="onnew">
-												<span class="text">
-													new
-												</span>
-											</span>
+                                    <span class="onnew">
+                                        <span class="text">
+                                            新品折扣
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                             <div class="product-thumb">
                                 <div class="thumb-inner">
                                     <a href="#">
-                                        <img src="assets/images/product-item-20.jpg" alt="img">
+                                        <img src="images/products/biaoben/黄铁矿树脂立方体矿石标本.jpg" alt="img">
                                     </a>
                                     <div class="thumb-group">
                                         <div class="yith-wcwl-add-to-wishlist">
                                             <div class="yith-wcwl-add-button">
-                                                <a href="#">Add to Wishlist</a>
+                                                <a href="#">加入购物车</a>
                                             </div>
                                         </div>
-                                        <a href="#" class="button quick-wiew-button">Quick View</a>
+                                        <a href="#" class="button quick-wiew-button">浏览</a>
                                         <div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">Add to cart</button>
+                                            <button class="single_add_to_cart_button button">加入购物车</button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="product-count-down">
-                                    <div class="nozari-countdown" data-y="2020" data-m="12" data-w="1" data-d="24"
-                                         data-h="20" data-i="50" data-s="60"></div>
+                                    <div class="nozari-countdown" data-y="2020" data-m="10" data-w="4" data-d="10"
+                                         data-h="20" data-i="20" data-s="60"></div>
                                 </div>
                             </div>
                             <div class="product-info">
                                 <h5 class="product-name product_title">
-                                    <a href="#">Long Sleeve Midi</a>
+                                    <a href="#">黄铁矿树脂立方体矿石标本</a>
                                 </h5>
                                 <div class="group-info">
                                     <div class="stars-rating">
                                         <div class="star-rating">
-                                            <span class="star-3"></span>
+                                            <span class="star-4"></span>
                                         </div>
                                         <div class="count-star">
-                                            (3)
+                                            (4)
                                         </div>
                                     </div>
                                     <div class="price">
                                         <del>
-                                            $65
+                                            ￥69
                                         </del>
                                         <ins>
-                                            $45
+                                            ￥49
                                         </ins>
                                     </div>
                                 </div>
@@ -640,54 +563,54 @@
                         <div class="product-inner equal-element">
                             <div class="product-top">
                                 <div class="flash">
-											<span class="onnew">
-												<span class="text">
-													new
-												</span>
-											</span>
+                                    <span class="onnew">
+                                        <span class="text">
+                                            新品折扣
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                             <div class="product-thumb">
                                 <div class="thumb-inner">
                                     <a href="#">
-                                        <img src="assets/images/product-item-22.jpg" alt="img">
+                                        <img src="images/products/biaoben/蓝色蕾丝玛瑙.jpg" alt="img">
                                     </a>
                                     <div class="thumb-group">
                                         <div class="yith-wcwl-add-to-wishlist">
                                             <div class="yith-wcwl-add-button">
-                                                <a href="#">Add to Wishlist</a>
+                                                <a href="#">加入购物车</a>
                                             </div>
                                         </div>
-                                        <a href="#" class="button quick-wiew-button">Quick View</a>
+                                        <a href="#" class="button quick-wiew-button">浏览</a>
                                         <div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">Add to cart</button>
+                                            <button class="single_add_to_cart_button button">加入购物车</button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="product-count-down">
-                                    <div class="nozari-countdown" data-y="2020" data-m="7" data-w="3" data-d="20"
-                                         data-h="10" data-i="10" data-s="20"></div>
+                                    <div class="nozari-countdown" data-y="2020" data-m="10" data-w="4" data-d="10"
+                                         data-h="20" data-i="20" data-s="60"></div>
                                 </div>
                             </div>
                             <div class="product-info">
                                 <h5 class="product-name product_title">
-                                    <a href="#">Long Sleeve Midi</a>
+                                    <a href="#">蓝色蕾丝玛瑙</a>
                                 </h5>
                                 <div class="group-info">
                                     <div class="stars-rating">
                                         <div class="star-rating">
-                                            <span class="star-3"></span>
+                                            <span class="star-5"></span>
                                         </div>
                                         <div class="count-star">
-                                            (3)
+                                            (5)
                                         </div>
                                     </div>
                                     <div class="price">
                                         <del>
-                                            $65
+                                            ￥135
                                         </del>
                                         <ins>
-                                            $45
+                                            ￥112
                                         </ins>
                                     </div>
                                 </div>
@@ -698,112 +621,54 @@
                         <div class="product-inner equal-element">
                             <div class="product-top">
                                 <div class="flash">
-											<span class="onnew">
-												<span class="text">
-													new
-												</span>
-											</span>
+                                    <span class="onnew">
+                                        <span class="text">
+                                            新品折扣
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                             <div class="product-thumb">
                                 <div class="thumb-inner">
                                     <a href="#">
-                                        <img src="assets/images/product-item-19.jpg" alt="img">
+                                        <img src="images/products/biaoben/文石树脂立方体矿石标本.jpg" alt="img">
                                     </a>
                                     <div class="thumb-group">
                                         <div class="yith-wcwl-add-to-wishlist">
                                             <div class="yith-wcwl-add-button">
-                                                <a href="#">Add to Wishlist</a>
+                                                <a href="#">加入购物车</a>
                                             </div>
                                         </div>
-                                        <a href="#" class="button quick-wiew-button">Quick View</a>
+                                        <a href="#" class="button quick-wiew-button">浏览</a>
                                         <div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">Add to cart</button>
+                                            <button class="single_add_to_cart_button button">加入购物车</button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="product-count-down">
-                                    <div class="nozari-countdown" data-y="2020" data-m="9" data-w="2" data-d="30"
-                                         data-h="20" data-i="60" data-s="60"></div>
+                                    <div class="nozari-countdown" data-y="2020" data-m="10" data-w="4" data-d="10"
+                                         data-h="20" data-i="20" data-s="60"></div>
                                 </div>
                             </div>
                             <div class="product-info">
                                 <h5 class="product-name product_title">
-                                    <a href="#">Long Sleeve Midi</a>
+                                    <a href="#">文石树脂立方体矿石标本</a>
                                 </h5>
                                 <div class="group-info">
                                     <div class="stars-rating">
                                         <div class="star-rating">
-                                            <span class="star-3"></span>
+                                            <span class="star-4"></span>
                                         </div>
                                         <div class="count-star">
-                                            (3)
+                                            (4)
                                         </div>
                                     </div>
                                     <div class="price">
                                         <del>
-                                            $65
+                                            ￥69
                                         </del>
                                         <ins>
-                                            $45
-                                        </ins>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-item style-5">
-                        <div class="product-inner equal-element">
-                            <div class="product-top">
-                                <div class="flash">
-											<span class="onnew">
-												<span class="text">
-													new
-												</span>
-											</span>
-                                </div>
-                            </div>
-                            <div class="product-thumb">
-                                <div class="thumb-inner">
-                                    <a href="#">
-                                        <img src="assets/images/product-item-18.jpg" alt="img">
-                                    </a>
-                                    <div class="thumb-group">
-                                        <div class="yith-wcwl-add-to-wishlist">
-                                            <div class="yith-wcwl-add-button">
-                                                <a href="#">Add to Wishlist</a>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="button quick-wiew-button">Quick View</a>
-                                        <div class="loop-form-add-to-cart">
-                                            <button class="single_add_to_cart_button button">Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-count-down">
-                                    <div class="nozari-countdown" data-y="2020" data-m="9" data-w="2" data-d="30"
-                                         data-h="20" data-i="60" data-s="60"></div>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-name product_title">
-                                    <a href="#">Long Sleeve Midi</a>
-                                </h5>
-                                <div class="group-info">
-                                    <div class="stars-rating">
-                                        <div class="star-rating">
-                                            <span class="star-3"></span>
-                                        </div>
-                                        <div class="count-star">
-                                            (3)
-                                        </div>
-                                    </div>
-                                    <div class="price">
-                                        <del>
-                                            $65
-                                        </del>
-                                        <ins>
-                                            $45
+                                            ￥49.9
                                         </ins>
                                     </div>
                                 </div>
@@ -813,1482 +678,137 @@
                 </div>
             </div>
         </div>
-        <div class="banner-wrapp">
+        
+        <div class="nozari-blog-wraap default" style="clear: both;">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="banner">
-                            <div class="item-banner style4">
-                                <div class="inner">
-                                    <div class="banner-content">
-                                        <h4 class="nozari-subtitle">Clothes Essential!</h4>
-                                        <h3 class="title">Square neck top</h3>
-                                        <div class="description">
-                                            Proin interdum magna primis id consequat dictum
-                                        </div>
-                                        <a href="#" class="button btn-shop-now">Shop now</a>
+                <h3 class="custommenu-title-blog">
+                    更多单品
+                </h3>
+                <div class="nozari-blog default">
+                    <div class="owl-slick equal-container nav-center"
+                         data-slick='{"autoplay":false, "autoplaySpeed":1000, "arrows":false, "dots":true, "infinite":true, "speed":800, "rows":1}'
+                         data-responsive='[{"breakpoint":"2000","settings":{"slidesToShow":3}},
+						 {"breakpoint":"1200","settings":{"slidesToShow":3}},{"breakpoint":"992","settings":{"slidesToShow":2}},{"breakpoint":"768","settings":{"slidesToShow":2}},{"breakpoint":"481","settings":{"slidesToShow":1}}]'>
+                        <div class="nozari-blog-item equal-element layout1">
+                            <div class="post-thumb">
+                                <a href="product grid.html">
+                                    <img src="images/products/dizhi/Acecamp折叠式定向越野指南针.jpg" alt="img">
+                                </a>
+                            </div>
+                            <div class="blog-info">
+                                <div class="blog-meta">
+                                    <div class="post-date">
+                                        Acecamp折叠式定向越野指南针
                                     </div>
+                                    <span class="view">
+                        					<i class="icon fa fa-eye" aria-hidden="true"></i>
+                        					631
+                        				</span>
+                                    <span class="comment">
+                        					<i class="icon fa fa-commenting" aria-hidden="true"></i>
+                        					84
+                        				</span>
+                                </div>
+                               
+                                <div class="main-info-post">
+                                    <a class="readmore" href="#">More</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="banner">
-                            <div class="item-banner style5">
-                                <div class="inner">
-                                    <div class="banner-content">
-                                        <h3 class="title">Smock dress<br/>Collection</h3>
-                                        <span class="code">
-												Use code:
-												<span>
-													NOZARI
-												</span>
-												Get 25% Off for all Accessories items!
-											</span>
-                                        <a href="#" class="button btn-shop-now">Shop now</a>
+						<div class="nozari-blog-item equal-element layout1">
+                            <div class="post-thumb">
+                                <a href="product grid.html">
+                                    <img src="images/products/dizhi/经纬仪簿.jpg" alt="img">
+                                </a>
+                                
+                                
+                            </div>
+                            <div class="blog-info">
+                                <div class="blog-meta">
+                                    <div class="post-date">
+                                      经纬仪簿
                                     </div>
+                                    <span class="view">
+											<i class="icon fa fa-eye" aria-hidden="true"></i>
+											631
+										</span>
+                                    <span class="comment">
+											<i class="icon fa fa-commenting" aria-hidden="true"></i>
+											84
+										</span>
+                                </div>
+                              
+                                <div class="main-info-post">
+                                    <a class="readmore" href="#">More</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="banner-wrapp rows-space-65">
-            <div class="container">
-                <div class="banner">
-                    <div class="item-banner style17">
-                        <div class="inner">
-                            <div class="banner-content">
-                                <h3 class="title">long sleeve midi dress </h3>
-                                <div class="description">
-                                    You have no clothes & Are you <br/>ready to grow? come & shop with us!
+                        
+                        <div class="nozari-blog-item equal-element layout1">
+                            <div class="post-thumb">
+                                <div class="video-nozari-blog">
+                                    <figure>
+                                        <img src="images/products/gongyipin/生物化石原石天然标本摆件.jpg" alt="img" width="370"
+                                             height="280">
+                                    </figure>
+                                    
                                 </div>
-                                <div class="banner-price">
-                                    Price from:
-                                    <span class="number-price">$45.00</span>
+                               
+                            </div>
+                            <div class="blog-info">
+                                <div class="blog-meta">
+                                    <div class="post-date">
+                                     生物化石原石天然标本摆件
+                                    </div>
+                                    <span class="view">
+											<i class="icon fa fa-eye" aria-hidden="true"></i>
+											631
+										</span>
+                                    <span class="comment">
+											<i class="icon fa fa-commenting" aria-hidden="true"></i>
+											84
+										</span>
                                 </div>
-                                <a href="#" class="button btn-shop-now">Shop now</a>
-                                <a href="#" class="button btn-view-collection">View more</a>
+                             
+                                <div class="main-info-post">
+                                    <a class="readmore" href="#">More</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="nozari-tabs  default rows-space-40">
-            <div class="container">
-                <div class="tab-head">
-                    <ul class="tab-link">
-                        <li class="active">
-                            <a data-toggle="tab" aria-expanded="true" href="#bestseller">Bestseller</a>
-                        </li>
-                        <li class="">
-                            <a data-toggle="tab" aria-expanded="true" href="#new_arrivals">New Arrivals </a>
-                        </li>
-                        <li class="">
-                            <a data-toggle="tab" aria-expanded="true" href="#top-rated">Top Rated</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tab-container">
-                    <div id="bestseller" class="tab-panel active">
-                        <div class="nozari-product">
-                            <ul class="row list-products auto-clear equal-container product-grid">
-                                <li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-1.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
+                        <div class="nozari-blog-item equal-element layout1">
+                            <div class="post-thumb">
+                                <a href="product grid.html">
+                                    <img src="images/products/other/地大专属纪念章.jpg" alt="img">
+                                </a>
+                                
+                                
+                            </div>
+                            <div class="blog-info">
+                                <div class="blog-meta">
+                                    <div class="post-date">
+                                        地大专属纪念章
                                     </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-2.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-3.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-4.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-5.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-6.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-7.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-8.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="new_arrivals" class="tab-panel">
-                        <div class="nozari-product">
-                            <ul class="row list-products auto-clear equal-container product-grid">
-                                <li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-9.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-10.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-11.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-13.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-14.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-15.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-16.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-2.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="top-rated" class="tab-panel">
-                        <div class="nozari-product">
-                            <ul class="row list-products auto-clear equal-container product-grid">
-                                <li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-10.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-12.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-8.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-4.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-9.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-13.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item product-type-variable col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-16.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="product-item  col-lg-3 col-md-4 col-sm-6 col-xs-6 col-ts-12 style-1">
-                                    <div class="product-inner equal-element">
-                                        <div class="product-top">
-                                            <div class="flash">
-													<span class="onnew">
-														<span class="text">
-															new
-														</span>
-													</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-thumb">
-                                            <div class="thumb-inner">
-                                                <a href="#">
-                                                    <img src="assets/images/product-item-8.jpg" alt="img">
-                                                </a>
-                                                <div class="thumb-group">
-                                                    <div class="yith-wcwl-add-to-wishlist">
-                                                        <div class="yith-wcwl-add-button">
-                                                            <a href="#">Add to Wishlist</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="button quick-wiew-button">Quick View</a>
-                                                    <div class="loop-form-add-to-cart">
-                                                        <button class="single_add_to_cart_button button">Add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <h5 class="product-name product_title">
-                                                <a href="#">Long Sleeve Midi</a>
-                                            </h5>
-                                            <div class="group-info">
-                                                <div class="stars-rating">
-                                                    <div class="star-rating">
-                                                        <span class="star-3"></span>
-                                                    </div>
-                                                    <div class="count-star">
-                                                        (3)
-                                                    </div>
-                                                </div>
-                                                <div class="price">
-                                                    <del>
-                                                        $65
-                                                    </del>
-                                                    <ins>
-                                                        $45
-                                                    </ins>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                                    <span class="view">
+											<i class="icon fa fa-eye" aria-hidden="true"></i>
+											631
+										</span>
+                                    <span class="comment">
+											<i class="icon fa fa-commenting" aria-hidden="true"></i>
+											84
+										</span>
+                                </div>
+                              
+                                <div class="main-info-post">
+                                    <a class="readmore" href="#">More</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="instagram-wrapp">
-    <div>
-        <h3 class="custommenu-title-blog">
-            <i class="flaticon-instagram" aria-hidden="true"></i>
-            Instagram Feed
-        </h3>
-        <div class="nozari-instagram">
-            <div class="instagram owl-slick equal-container"
-                 data-slick='{"autoplay":false, "autoplaySpeed":1000, "arrows":false, "dots":false, "infinite":true, "speed":800, "rows":1}'
-                 data-responsive='[{"breakpoint":"2000","settings":{"slidesToShow":5}},{"breakpoint":"1200","settings":{"slidesToShow":4}},{"breakpoint":"992","settings":{"slidesToShow":3}},{"breakpoint":"768","settings":{"slidesToShow":2}},{"breakpoint":"481","settings":{"slidesToShow":2}}]'>
-                <div class="item-instagram">
-                    <a href="#">
-                        <img src="assets/images/item-instagram-1.jpg" alt="img">
-                    </a>
-                    <span class="text">
-                        <i class="icon flaticon-instagram" aria-hidden="true"></i>
-			        </span>
-                </div>
-                <div class="item-instagram">
-                    <a href="#">
-                        <img src="assets/images/item-instagram-2.jpg" alt="img">
-                    </a>
-                    <span class="text">
-                        <i class="icon flaticon-instagram" aria-hidden="true"></i>
-			        </span>
-                </div>
-                <div class="item-instagram">
-                    <a href="#">
-                        <img src="assets/images/item-instagram-3.jpg" alt="img">
-                    </a>
-                    <span class="text">
-                        <i class="icon flaticon-instagram" aria-hidden="true"></i>
-			        </span>
-                </div>
-                <div class="item-instagram">
-                    <a href="#">
-                        <img src="assets/images/item-instagram-4.jpg" alt="img">
-                    </a>
-                    <span class="text">
-                        <i class="icon flaticon-instagram" aria-hidden="true"></i>
-			        </span>
-                </div>
-                <div class="item-instagram">
-                    <a href="#">
-                        <img src="assets/images/item-instagram-5.jpg" alt="img">
-                    </a>
-                    <span class="text">
-                        <i class="icon flaticon-instagram" aria-hidden="true"></i>
-			        </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <footer class="footer style7">
     <div class="container">
         <div class="container-wapper">
@@ -2296,81 +816,71 @@
                 <div class="box-footer col-xs-12 col-sm-6 col-md-6 col-lg-4">
                     <div class="widget-box">
                         <div class="single-img">
-                            <a href="index.html"><img src="assets/images/logo-light.png" alt="img"></a>
+                           <img src="images/logo.png" alt="img" style="width:18%;height:18%">
                         </div>
                         <ul class="menu">
+                       
                             <li class="menu-item">
-                                <a href="#"><span class="flaticon-placeholder"></span>45 Grand Central Terminal New
-                                    York,NY 1017 United State USA</a>
+                                <a href="#"><span class="fa fa-phone"></span>12345678</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#"><span class="fa fa-phone"></span>(+123) 456 789 - (+123) 666 888</a>
+                                <a href="#"><span class="fa fa-envelope-o"></span>1564743199@qq.com</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#"><span class="fa fa-envelope-o"></span>Contact@yourcompany.com</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#"><span class="flaticon-clock"></span>Mon-Sat 9:00pm - 5:00pm Sun : Closed</a>
+                                <a href="#"><span class="flaticon-clock"></span>9:00am - 11:00pm</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="box-footer col-xs-12 col-sm-6 col-md-6 col-lg-2">
                     <div class="nozari-custommenu default">
-                        <h2 class="widgettitle">Quick Menu</h2>
+                        <h2 class="widgettitle">快速浏览</h2>
                         <ul class="menu">
                             <li class="menu-item">
-                                <a href="#">New arrivals</a>
+                                <a href="#">新到商品</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#">Life style</a>
+                                <a href="#">标本</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#">Trousers</a>
+                                <a href="#">地质用品</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#">Bags</a>
+                                <a href="#">工艺品</a>
                             </li>
-                            <li class="menu-item">
-                                <a href="#">Shoes</a>
-                            </li>
+                            
                         </ul>
                     </div>
                 </div>
                 <div class="box-footer col-xs-12 col-sm-6 col-md-6 col-lg-2">
                     <div class="nozari-custommenu default">
-                        <h2 class="widgettitle">Information</h2>
+                        <h2 class="widgettitle">信息</h2>
                         <ul class="menu">
                             <li class="menu-item">
-                                <a href="#">FAQs</a>
+                                <a href="#">售后服务</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#">Track Order</a>
+                                <a href="#">配送方式</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#">Delivery</a>
+                                <a href="#">联系我们</a>
                             </li>
-                            <li class="menu-item">
-                                <a href="#">Contact Us</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#">Return</a>
-                            </li>
+                      
                         </ul>
                     </div>
                 </div>
                 <div class="box-footer col-xs-12 col-sm-6 col-md-6 col-lg-4">
                     <div class="nozari-newsletter style1">
                         <div class="newsletter-head">
-                            <h3 class="title">Newsletter</h3>
+                            <h3 class="title">联系方式</h3>
                         </div>
                         <div class="newsletter-form-wrap">
                             <div class="list">
-                                Get notified of new products, limited releases, and more.
+                                请继续关注求珍小铺！
                             </div>
                             <input type="email" class="input-text email email-newsletter"
-                                   placeholder="Your email letter">
-                            <button class="button btn-submit submit-newsletter">SUBSCRIBE</button>
+                                   placeholder="您的联系方式">
+                            <button class="button btn-submit submit-newsletter">订阅</button>
                         </div>
                     </div>
                     <div class="nozari-socials">
@@ -2403,63 +913,20 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="coppyright">
-                            Copyright © 2019
-                            <a href="#">Nozari</a>
-                            . All rights reserved
+                            Copyright © 2021
+                            <a href="#">求珍悟石</a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="nozari-payment">
-                            <img src="assets/images/payments.png" alt="img">
-                        </div>
+                       
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-<div class="footer-device-mobile">
-    <div class="wapper">
-        <div class="footer-device-mobile-item device-home">
-            <a href="index.html">
-					<span class="icon">
-						<i class="fa fa-home" aria-hidden="true"></i>
-					</span>
-                Home
-            </a>
-        </div>
-        <div class="footer-device-mobile-item device-home device-wishlist">
-            <a href="#">
-					<span class="icon">
-						<i class="fa fa-heart" aria-hidden="true"></i>
-					</span>
-                Wishlist
-            </a>
-        </div>
-        <div class="footer-device-mobile-item device-home device-cart">
-            <a href="#">
-					<span class="icon">
-						<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-						<span class="count-icon">
-							0
-						</span>
-					</span>
-                <span class="text">Cart</span>
-            </a>
-        </div>
-        <div class="footer-device-mobile-item device-home device-user">
-            <a href="login.html">
-					<span class="icon">
-						<i class="fa fa-user" aria-hidden="true"></i>
-					</span>
-                Account
-            </a>
-        </div>
-    </div>
-</div>
-<a href="#" class="backtotop">
-    <i class="pe-7s-angle-up"></i>
-</a>
+
+
 <script src="assets/js/jquery-1.12.4.min.js"></script>
 <script src="assets/js/jquery.plugin-countdown.min.js"></script>
 <script src="assets/js/jquery-countdown.min.js"></script>

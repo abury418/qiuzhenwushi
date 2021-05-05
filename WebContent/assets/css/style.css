@@ -1,40 +1,4 @@
-/*--------------------------/*
-Tempale name : Nozari
 
-/*--------------------------/*
-
-[Table of contents]
-[Color codes]
-Background: #ffffff
-Body Color : #868686
-[Typography]
-Body:       14px/24px Open Sans, sans-serif;
-Heading:    Open Sans, sans-serif;
-Input, textarea: 14px/24px Open Sans, sans-serif;
-
-1 COMPONENT STYLES
-2. HEADER
-  2.1 General
-  2.2 Header Skin
-3. MAIN
-4. BLOG
-  4.1 Blog page
-  4.2 Blog single
-5. SIDEBAR
-  5.1 Left Sidebar
-  5.2 Right Sidebar
-6. SHOP
-  6.1 Shop Page
-  6.2 Shop Single
-7.INNER PAGES
-8. FOOTER
-9. RESPONSIVE
-SLIDESHOW
-REPONSIVE
-/*-------------------------*/
-/*==========================================================================
-  1.0 COMPONENT STYLES
-============================================================================ */
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
@@ -204,20 +168,6 @@ select:focus {
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
-:-moz-placeholder {
-	/* Firefox 18- */
-	text-align: inherit;
-	color: inherit;
-	opacity: 1;
-	filter: alpha(opacity=100);
-}
-::-moz-placeholder {
-	/* Firefox 19+ */
-	text-align: inherit;
-	color: inherit;
-	opacity: 1;
-	filter: alpha(opacity=100);
-}
 :-ms-input-placeholder {
 	text-align: inherit;
 	color: inherit;
@@ -241,7 +191,7 @@ table {
 	margin-bottom: 20px;
 }
 table thead {
-	background-color: #f8f8f8;
+	background-color: #8B4726;
 }
 th, td {
 	border: 1px solid #f3f3f3;
@@ -1206,7 +1156,7 @@ table tr:last-child td, table tr:last-child th {
 	font-size: 24px;
 	line-height: 1;
 	color: #fff;
-	background-color: #F91942;
+	background-color: #8B4726;
 	z-index: 1;
 	cursor: pointer;
 	border-radius: 50%;
@@ -1270,7 +1220,7 @@ table tr:last-child td, table tr:last-child th {
 }
 .slick-dots li.slick-active {
 	border-color: transparent;
-	background-color: #F91942;
+	background-color: #8B4726;
 }
 .slick-dots li button {
 	display: none;
@@ -1453,7 +1403,7 @@ table tr:last-child td, table tr:last-child th {
 	z-index: 1001;
 }
 .nozari-dropdown .language-toggle:after {
-	/* content: "\f107"; */
+	content: "\f107";
 	font-family: 'FontAwesome';
 	display: inline-block;
 	margin-left: 5px;
@@ -1900,8 +1850,26 @@ table tr:last-child td, table tr:last-child th {
 	font-weight: 700;
 	margin-bottom: 0;
 }
-.submenu.menu-page {
+/* .submenu.menu-page {
 	background-image: url(../images/mega-bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 50px 0 40px;
+} */
+#submenu-mega-menu-menu-page1 {
+	background-image: url(../images/mega-bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 50px 0 40px;
+}
+#submenu-mega-menu-menu-page2 {
+	background-image: url(../images/beltkit-32.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 50px 0 40px;
+}
+#submenu-mega-menu-menu-page3 {
+	
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding: 50px 0 40px;
@@ -1935,7 +1903,7 @@ table tr:last-child td, table tr:last-child th {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	border-bottom: 1px solid #F91942;
+	border-bottom: 1px solid #8B4726;
 	width: 30px;
 }
 .mega-menu .nozari-custommenu ul {
@@ -2186,7 +2154,7 @@ blockquote .author .desc {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	border-bottom: 2px solid #F91942;
+	border-bottom: 2px solid #8B4726;
 	width: 100%;
 }
 @-webkit-keyframes underline-link {
@@ -2556,13 +2524,13 @@ blockquote .author .desc {
 }
 .customer_login .lost_password .forgot-pw {
 	font-size: 14px;
-	color: #F91942;
+	color: #222;
 	font-weight: 600;
 	float: right
 }
 .customer_login .label-text span {
 	font-size: 14px;
-	color: #F91942;
+	color: #222;
 	font-weight: 600;
 }
 .customer_login .login-item:hover {
@@ -2581,8 +2549,8 @@ blockquote .author .desc {
 .nozari-countdown .box-count {
 	color: #fff;
 	display: inline-block;
-	border: 2px solid #F91942;
-	background-color: #F91942;
+	border: 2px solid #8B4726;
+	background-color: #8B4726;
 	vertical-align: middle;
 	text-align: center;
 	overflow: hidden;
@@ -2634,7 +2602,7 @@ blockquote .author .desc {
 .nozari-iconbox.default .icon {
 	font-size: 50px;
 	padding: 0 20px 0 0;
-	color: #F91942;
+	color: #8B4726;
 }
 .nozari-iconbox.default .icon .fa.fa-life-ring {
 	font-size: 48px;
@@ -3398,7 +3366,7 @@ blockquote .author .desc {
 	display: block;
 }
 .backtotop:hover {
-	background: #F91942;
+	background: #8B4726;
 	color: #fff !important;
 }
 /*coppyright*/
@@ -3562,7 +3530,7 @@ blockquote .author .desc {
 .pagination .page-numbers.current, .pagination .page-numbers:hover {
 	color: #fff;
 	border-color: transparent;
-	background-color: #F91942;
+	background-color: #8B4726;
 }
 .pagination .page-numbers .icon {
 	font-weight: 600;
@@ -3609,7 +3577,7 @@ blockquote .author .desc {
 	left: 0;
 	bottom: -1px;
 	width: 50px;
-	border-bottom: 2px solid #F91942;
+	border-bottom: 2px solid #8B4726;
 }
 .widget ul, .widget ol {
 	padding: 0;
@@ -3753,7 +3721,7 @@ blockquote .author .desc {
 	border: none;
 }
 .widget_filter_price .ui-slider .ui-slider-range {
-	background: #F91942;
+	background: #8B4726;
 }
 .widget_filter_price .ui-slider .ui-slider-handle {
 	width: 0;
@@ -3766,13 +3734,13 @@ blockquote .author .desc {
 	outline: 0 none;
 	position: absolute;
 	z-index: 2;
-	border-color: #F91942 transparent;
+	border-color: #8B4726 transparent;
 }
 .widget_filter_price .ui-slider .ui-slider-handle::before {
 	content: '';
 	border-style: solid;
 	border-width: 8px 6px 0 6px;
-	border-color: #F91942 transparent;
+	border-color: #8B4726 transparent;
 }
 .widget_filter_price .price-slider-amount {
 	margin-top: 25px;
@@ -4043,7 +4011,7 @@ blockquote .author .desc {
 	vertical-align: top;
 }
 .grid-view-mode .modes-mode.active {
-	color: #F91942;
+	color: #8B4726;
 }
 .grid-view-mode .modes-mode.mode-grid::before {
 	content: "\f118";
@@ -4091,7 +4059,7 @@ ul.list-products {
 	line-height: 16px;
 	height: 22px;
 	padding: 3px 5px 3px 10px;
-	background-color: #F91942;
+	background-color: #8B4726;
 	color: #fff;
 	position: relative;
 }
@@ -4102,7 +4070,7 @@ ul.list-products {
 	top: 0;
 	border-style: solid;
 	border-width: 11px 7px;
-	border-color: transparent transparent #F91942 #F91942;
+	border-color: transparent transparent #8B4726 #8B4726;
 }
 .product-item .yith-wcwl-add-to-wishlist > div a:before {
 	font-size: 18px;
@@ -4261,7 +4229,20 @@ ul.list-products {
 	visibility: visible;
 }
 .product-item .thumb-group .loop-form-add-to-cart:hover {
-	background-color: #F91942;
+	background-color: #8B4726;
+}
+#view{
+	color: white;
+}
+#view:hover{
+	color: black;
+	background-color: white;
+	border: solid 1px   #8B4726;
+}
+#view:active{
+	color: black;
+	background-color: white;
+	border: solid 1px   #8B4726;
 }
 .product-item .thumb-group .loop-form-add-to-cart:hover .single_add_to_cart_button::before {
 	color: #fff;
@@ -4269,10 +4250,10 @@ ul.list-products {
 .product-item .thumb-group .quick-wiew-button:hover,
 .product-item .thumb-group .button.quick-wiew-button:hover {
 	color: #fff;
-	background-color: #F91942;
+	background-color: #8B4726;
 }
 .product-item .thumb-group .yith-wcwl-add-to-wishlist:hover {
-	background-color: #F91942;
+	background-color: #8B4726;
 }
 .product-item .thumb-group .yith-wcwl-add-to-wishlist:hover a {
 	color: #fff;
@@ -4428,7 +4409,7 @@ ul.list-products {
 }
 .product-item.style-list .product-list-message {
 	font-size: 13px;
-	color: #F91942;
+	color: #8B4726;
 	font-weight: 700;
 	position: relative;
 	padding-bottom: 15px;
@@ -4507,7 +4488,7 @@ ul.list-products {
 	display: inline-block;
 	float: left;
 	font-family: FontAwesome;
-	/* content: "\f006\f006\f006\f006\f006"; */
+	content: "\f006\f006\f006\f006\f006";
 	font-size: 13px;
 	line-height: 13px;
 	color: #ffb933;
@@ -4702,7 +4683,7 @@ ul.list-products {
 .nozari-contact-info .item .icon {
 	display: inline-block;
 	float: left;
-	border: 1px solid #F91942;
+	border: 1px solid #8B4726;
 	border-radius: 50%;
 	width: 42px;
 	height: 42px;
@@ -4713,7 +4694,7 @@ ul.list-products {
 .nozari-contact-info .item .icon::before {
 	font-family: 'FontAwesome';
 	font-size: 20px;
-	color: #F91942;
+	color: #8B4726;
 	display: inline-block;
 	text-align: center;
 }
@@ -4984,7 +4965,7 @@ ul.list-products {
 	left: 3px;
 	font-size: 46px;
 	bottom: 20px;
-	color: #F91942;
+	color: #8B4726;
 }
 .nozari-iconbox .content .title {
 	font-size: 15px;
@@ -5171,7 +5152,7 @@ ul.list-products {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	border-bottom: 1px solid #F91942;
+	border-bottom: 1px solid #8B4726;
 	width: 30px;
 }
 .shipping-address .form-row:not(.form-row-last) {
@@ -5748,7 +5729,7 @@ ul.list-products {
 	position: absolute;
 	content: '';
 	width: 80px;
-	border-bottom: 2px solid #F91942;
+	border-bottom: 2px solid #8B4726;
 	bottom: 0;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
@@ -5761,7 +5742,7 @@ ul.list-products {
 	position: absolute;
 	content: '';
 	width: 44px;
-	border-bottom: 2px solid #F91942;
+	border-bottom: 2px solid #8B4726;
 	bottom: -5px;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
@@ -5835,7 +5816,7 @@ ul.list-products {
 	border-radius: 0;
 }
 .slider-item .title-small {
-	color: #F91942;
+	color: #8B4726;
 	font-size: 14px;
 	letter-spacing: 0.05em;
 	font-weight: 700;
@@ -5858,7 +5839,6 @@ ul.list-products {
 	max-width: 370px;
 	font-family: 'Cormorant Garamond', serif;
 	text-transform: capitalize;
-	color:#333232;
 }
 .slider-item.slick-active .title-big {
 	animation-duration: 2s;
@@ -5874,7 +5854,6 @@ ul.list-products {
 	font-weight: 600;
 	display: block;
 	margin-bottom: 35px;
-	color:#F91942;
 }
 .slider-item.slick-active .price, .slider-item.slick-active .description {
 	animation-duration: 2s;
@@ -5886,18 +5865,18 @@ ul.list-products {
 }
 .slider-item .price .number-price::before {
 	content: '';
-	background-color: #F91942;
+	background-color: #8B4726; 
 	position: absolute;
 	left: 0;
-	right: 5px;
+	right: 0;
 	bottom: 2px;
-	height: 10px;
+	height: 30px;
 	opacity: 0.5;
 }
 .slider-item .price .number-price {
 	text-transform: uppercase;
 	font-size: 28px;
-	color: #000;
+	color: #fff;
 	position: relative;
 }
 .slider-item .slider-infor .button {
@@ -5927,7 +5906,7 @@ ul.list-products {
 	border-color: #ffffff;
 }
 .slider-item.style1 .slider-inner {
-	background-image: url(../images/slider-thumb1.jpg);
+	/* background-image: url(../images/yinger.jpg); */
 }
 .slider-item.style1 .slider-inner .slider-infor, .slider-item.style3 .slider-inner .slider-infor {
 	padding-bottom: 126px;
@@ -5936,7 +5915,7 @@ ul.list-products {
 	padding-right: 170px;
 }
 .slider-item.style2 .slider-inner {
-	background-image: url(../images/slider-thumb2.jpg);
+	/* background-image: url(../images/nanzhuang.jpg); */
 }
 .slider-item.style2 .slider-inner .slider-infor {
 	padding-bottom: 160px;
@@ -5952,7 +5931,7 @@ ul.list-products {
 }
 .slider-item.style2 .title-big span::before {
 	content: '';
-	background-color: #F91942;
+	background-color: #8B4726;
 	position: absolute;
 	left: 0;
 	right: 5px;
@@ -5961,7 +5940,7 @@ ul.list-products {
 	opacity: 0.5;
 }
 .slider-item.style3 .slider-inner {
-	background-image: url(../images/slider-thumb3.jpg);
+	background-image: url(../images/nvzhuang.jpg);
 }
 .home-slider.style1 {
 	padding-top: 30px;
@@ -6065,7 +6044,7 @@ ul.list-products {
 	-ms-transform: scale(0);
 	-o-transform: scale(0);
 	transform: scale(0);
-	border-bottom: 2px solid #F91942;
+	border-bottom: 2px solid #8B4726;
 	-webkit-transition: transform 0.25s ease 0s;
 	-moz-transition: transform 0.25s ease 0s;
 	-o-transition: transform 0.25s ease 0s;
@@ -6105,7 +6084,7 @@ ul.list-products {
 	position: absolute;
 	content: '';
 	width: 80px;
-	border-bottom: 2px solid #F91942;
+	border-bottom: 2px solid #8B4726;
 	bottom: 0;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
@@ -6118,7 +6097,7 @@ ul.list-products {
 	position: absolute;
 	content: '';
 	width: 44px;
-	border-bottom: 2px solid #F91942;
+	border-bottom: 2px solid #8B4726;
 	bottom: -5px;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
@@ -6306,7 +6285,7 @@ ul.list-products {
 .nozari-blog-item.style2 .post-top > a {
 	color: #fff;
 	padding: 3px 10px;
-	background-color: #F91942;
+	background-color: #8B4726;
 	font-size: 11px;
 }
 .nozari-blog-item.style2 .post-item-share .icon {
@@ -6378,7 +6357,7 @@ ul.list-products {
 -----------------home 02------------------
 =========================================*/
 .top-bar {
-	background: #F91942;
+	background: #8B4726;
 }
 .top-bar-left {
 	display: inline-block;
@@ -6436,7 +6415,7 @@ ul.list-products {
 	background: #111;
 }
 .header.style2 .header-nav-container {
-	background: #F91942;
+	background: #8B4726;
 }
 .header.style2 .main-menu {
 	margin: 0 auto;
@@ -6645,7 +6624,7 @@ ul.list-products {
 	position: relative;
 }
 .slider-inner .when-code .number-code {
-	color: #F91942;
+	color: #8B4726;
 	font-size: 18px;
 	border-bottom: 1px solid;
 }
@@ -6690,7 +6669,7 @@ ul.list-products {
 	margin-bottom: 20px;
 }
 .slider-item.style7 .slider-inner {
-	background-image: url(../images/slider-thumb4.jpg);
+	background-image: url(../images/恐龙标本化石模型.jpg);
 }
 .slider-item.style7 .slider-inner .slider-infor {
 	padding-bottom: 185px;
@@ -6699,7 +6678,7 @@ ul.list-products {
 	padding-right: 400px;
 }
 .slider-item.style8 .slider-inner {
-	background-image: url(../images/slider-thumb5.jpg);
+	background-image: url(../images/专业勘探锤.jpg);
 }
 .slider-item.style8 .slider-inner .slider-infor {
 	padding-bottom: 161px;
@@ -6708,7 +6687,7 @@ ul.list-products {
 	padding-right: 400px;
 }
 .slider-item.style9 .slider-inner {
-	background-image: url(../images/slider-thumb6.jpg);
+	background-image: url(../images/史前化石冰箱贴.jpg);
 }
 .slider-item.style9 .slider-inner .slider-infor {
 	padding-bottom: 161px;
@@ -7057,7 +7036,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 .nozari-newsletter.style3 {
 	overflow: hidden;
 	padding: 90px 0 80px;
-	background-image: url(../images/newsletter-bg-2.jpg);
+	background-image: url(../images/category-box-02.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	position: relative;
@@ -7082,7 +7061,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	position: absolute;
 	content: '';
 	width: 80px;
-	border-bottom: 2px solid #F91942;
+	border-bottom: 2px solid #8B4726;
 	bottom: 0;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
@@ -7095,7 +7074,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	position: absolute;
 	content: '';
 	width: 44px;
-	border-bottom: 2px solid #F91942;
+	border-bottom: 2px solid #8B4726;
 	bottom: -5px;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
@@ -7119,7 +7098,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 .nozari-newsletter.style3 .submit-newsletter {
 	min-width: 139px;
 	margin-left: 5px;
-	background-color: #F91942;
+	background-color: #8B4726;
 	color: #ffffff;
 	vertical-align: top;
 }
@@ -7323,8 +7302,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	vertical-align: top;
 }
 .header-nav-container {
-	background:#333232;
-	/* background: #151515; */
+	background: #151515;
 }
 .header-nav-wapper {
 	display: table;
@@ -7423,7 +7401,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	margin: 0 25px;
 }
 .vertical-menu .menu-item a:hover {
-	color: #F91942;
+	color: #8B4726;
 }
 .vertical-menu .menu-item:last-child a {
 	border: none;
@@ -7566,7 +7544,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	background-color: #000;
 }
 .product-item.style-3 .group-buttons .button:hover {
-	background-color: #F91942;
+	background-color: #8B4726;
 }
 .product-item.style-3 .product-name a {
 	overflow: hidden;
@@ -7601,7 +7579,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	list-style: none;
 	display: inline-block;
 	padding: 0 10px;
-	background: #F91942;
+	background: #8B4726;
 	min-width: 77px;
 	height: 26px;
 	line-height: 26px;
@@ -7675,7 +7653,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	-ms-transform: translateX(50%);
 	-o-transform: translateX(50%);
 	transform: translateX(50%);
-	border-bottom: 2px solid #F91942;
+	border-bottom: 2px solid #8B4726;
 }
 .nozari-product.layout1 .head .subtitle {
 	font-size: 15px;
@@ -7746,7 +7724,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 .testimonial-item .info .name span {
 	display: block;
 	font-size: 13px;
-	color: #F91942;
+	color: #8B4726;
 }
 .nozari-testimonials.default .owl-slick .slick-list {
 	margin: 0 !important;
@@ -7770,7 +7748,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 .instagram-wrapp .custommenu-title-blog i {
 	display: block;
 	font-size: 60px;
-	color: #F91942;
+	color: #8B4726;
 	font-weight: normal;
 }
 .nozari-instagram {
@@ -8020,7 +7998,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 .product-item.style-4 {
 	margin-bottom: 0;
 }
-.weekly-featu#F91942-wrapp .custommenu-title-blog {
+.weekly-featured-wrapp .custommenu-title-blog {
 	margin-top: -9px;
 }
 .nozari-product .product-list-owl.nav-botton-center {
@@ -8398,12 +8376,12 @@ body.vertical-menu-open .vertical-menu-overlay {
 }
 .item-banner.style1 .banner-content {
 	padding-left: 150px;
-	padding-right: 30px;;
+	padding-right: 30px;
 	padding-top: 65px;
 	padding-bottom: 70px;
 }
 .item-banner .nozari-subtitle {
-	color: #F91942;
+	color: #8B4726;
 	font-size: 14px;
 	font-weight: 700;
 	padding: 0 0 5px;
@@ -8434,7 +8412,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 }
 .item-banner .when-code .code::before {
 	content: '';
-	background-color: #F91942;
+	background-color: #8B4726;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -8448,9 +8426,9 @@ body.vertical-menu-open .vertical-menu-overlay {
 	position: relative;
 }
 .item-banner .banner-content > .button {
-	border: 1px solid #F91942;
+	border: 1px solid #8B4726;
 	color: #fff;
-	background-color: #F91942;
+	background-color: #8B4726;
 	padding-right: 20px;
 	padding-left: 20px;
 	padding-top: 7px;
@@ -8470,7 +8448,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 }
 .item-banner.style2 .banner-content {
 	padding-left: 130px;
-	padding-right: 30px;;
+	padding-right: 30px;
 	padding-top: 78px;
 	padding-bottom: 78px;
 }
@@ -8488,7 +8466,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 }
 .item-banner .hot-price .price-number::before {
 	content: '';
-	background-color: #F91942;
+	background-color: #8B4726;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -8593,7 +8571,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 }
 .item-banner.style5 .code span::before {
 	content: '';
-	background-color: #F91942;
+	background-color: #8B4726;
 	position: absolute;
 	left: 0;
 	right: 3px;
@@ -8618,7 +8596,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 }
 /*banner home 03*/
 .item-banner.style7 .inner {
-	background-image: url(../images/banner-home-5.jpg);
+	background-image: url(../images/蓝色蕾丝玛瑙.jpg);
 }
 .item-banner.style7 .banner-content {
 	padding-top: 58px;
@@ -8635,7 +8613,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	margin-bottom: 15px;
 }
 .item-banner.style8 .inner {
-	background-image: url(../images/banner-home-6.jpg);
+	background-image: url(../images/编织草帽遮阳防晒.jpg);
 }
 .item-banner.style8 .banner-content {
 	padding-top: 55px;
@@ -8656,12 +8634,12 @@ body.vertical-menu-open .vertical-menu-overlay {
 }
 .item-banner .price::before {
 	content: '';
-	background-color: #F91942;
+	background-color: #8B4726;
 	position: absolute;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	height: 10px;
+	height: 30px;
 	opacity: 0.5;
 }
 /*banner video*/
@@ -8722,7 +8700,7 @@ iframe {
 }
 .item-banner.style9 .code .nummer-code::before {
 	content: '';
-	background-color: #F91942;
+	background-color: #8B4726;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -8944,7 +8922,7 @@ iframe {
 	margin-bottom: 23px;
 }
 .item-banner.style21 .start-from span {
-	color: #F91942;
+	color: #8B4726;
 	font-size: 120%;
 }
 .item-banner.style21 .group-pinap .btn-pinmap-1 {
@@ -9063,7 +9041,7 @@ iframe {
 }
 .item-banner.style14 .code .nummer-code::before {
 	content: '';
-	background-color: #F91942;
+	background-color: #8B4726;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -9152,7 +9130,7 @@ iframe {
 }
 .item-banner.style17 .number-price::before {
 	content: '';
-	background-color: #F91942;
+	background-color: #8B4726;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -9238,7 +9216,7 @@ iframe {
 }
 .footer .widgettitle::before {
 	content: '';
-	border-left: 3px solid #F91942;
+	border-left: 3px solid #8B4726;
 	height: 19px;
 	position: absolute;
 	left: 0;
@@ -9258,7 +9236,7 @@ iframe {
 }
 .footer .menu .menu-item > a > span {
 	padding-right: 5px;
-	color: #F91942;
+	color: #8B4726;
 }
 .nozari-newsletter.style1 {
 	margin-bottom: 10px;
@@ -9275,7 +9253,7 @@ iframe {
 }
 .nozari-newsletter.style1 .title::before, .nozari-newsletter.style2 .title::before {
 	content: '';
-	border-left: 3px solid #F91942;
+	border-left: 3px solid #8B4726;
 	height: 19px;
 	position: absolute;
 	left: 0;
@@ -9337,7 +9315,7 @@ iframe {
 	color: #fff;
 	width: calc(37% - 5px);
 	float: right;
-	background: #F91942;
+	background: #8B4726;
 }
 .footer .nozari-socials .socials {
 	margin: 0;
@@ -9374,7 +9352,7 @@ iframe {
 	left: -1px;
 	right: -1px;
 	bottom: -1px;
-	background-color: #F91942;
+	background-color: #8B4726;
 	opacity: 0;
 	visibility: hidden;
 	-webkit-transform: scale(.3);
@@ -9395,7 +9373,7 @@ iframe {
 	transform: scale(1);
 }
 .footer .nozari-socials li a:hover {
-	border-color: #F91942;
+	border-color: #8B4726;
 	color: #fff
 }
 .footer .nozari-socials li a i {
@@ -10575,33 +10553,8 @@ iframe {
 	.pagination .page-numbers {
 		margin-bottom: 10px;
 	}
-	/*404 page*/
-	.error-404 {
-		display: block;
-	}
-	.error-404 .images, .error-404 .text-404 {
-		display: block;
-		width: 100%;
-		text-align: center;
-		padding-left: 0;
-	}
-	.error-404 .images {
-		margin-bottom: 30px;
-	}
-	.error-404 .search-form .search-field {
-		margin-right: 0
-	}
-	.text-404 .page-title {
-		margin-top: 0;
-	}
-	/*about page*/
-	.nozari-iconbox.layout1 {
-		text-align: center;
-		margin-top: 30px;
-	}
-	.nozari-iconbox.layout1 .icon-item {
-		display: inline-block;
-	}
+	
+	
 	/*shop page*/
 	.shop-top-control .select-form, .shop-top-control .grid-view-mode, .shop-top-control {
 		display: inline-block;
@@ -10985,13 +10938,13 @@ iframe {
 .nozari-newsletter.style1 .newsletter-form-wrap .submit-newsletter:hover, .product-item .button:hover, .customer_login input[type="submit"],
 .sevice-box-content .sevice-button:hover, .footer-device-mobile-item.device-cart .count-icon, .widget_filter_size li.active, .widget_filter_size li:hover,
 .product-item.style-list .single_variation_wrap > .button:hover, .shoppingcart-content .control-cart .button:hover, .checkout-wrapp .button:hover,
-.product-item .button.quick-wiew-button:hover, .checkout-wrapp .group-button-payment .btn-credit-card, .payment-method-wrapp .button-control .btn-pay-now, .end-checkout .button, .btn-zoom.open_qv:hover,
+.checkout-wrapp .group-button-payment .btn-credit-card, .payment-method-wrapp .button-control .btn-pay-now, .end-checkout .button, .btn-zoom.open_qv:hover,
 .attribute_size .list-size a.active, .attribute_size .list-size a:hover, .tab-details-product .tab-link li a::after,
 .product-item.style2 .group-buttons .button:hover, .product-item.style-2 .group-buttons .added_to_cart:hover, .kt-popup-newsletter.style-2 .mfp-close,
 .shopcart-description .actions .button-viewcart:hover, .kt-popup-quickview .mfp-close, .nozari-newsletter.style2 .newsletter-form-wrap .submit-newsletter:hover,
 .product-item.style-6 .loop-form-add-to-cart .button, .pinmap-buttom, .header-nav-wapper .vertical-wapper,
 .slider-item .slider-infor .button:hover, .list-category .category-item:hover {
-	background-color: #F91942;
+	background-color: #8B4726;
 	
 }
 .product-item .button:hover,
@@ -11011,7 +10964,7 @@ select:focus, .sevice-box-content .sevice-button:hover, .widget_filter_size li.a
 .nozari-tabs .tab-link li.active a, .product-item.style-6 .loop-form-add-to-cart .button,
 .slider-item .slider-infor .button:hover {
 	
-	border-color: #F91942 !important;
+	border-color: #8B4726 !important;
 	
 }
 a:hover, a:focus, a:active,
@@ -11025,7 +10978,7 @@ a:hover, a:focus, a:active,
 .tab-details-product .tab-link li.active a, .review_form .comment-form-review .stars a.active, .review_form .comment-form-review .stars a:hover,
 .related .slick-slider.nav-center > .slick-arrow:hover, .up-sells .slick-slider.nav-center > .slick-arrow:hover, .slider-item .button:hover, .slick-slider.nav-center > .slick-arrow:hover,
 .nozari-iconbox.default .icon {
-	color: #F91942;
+	color: #8B4726;
 	
 }
 @media (min-width: 1367px) {
@@ -11084,4 +11037,300 @@ a:hover, a:focus, a:active,
 		min-width: 45%;
 		border-radius: 0;
 	}
+}
+.prada-left{
+	margin-left: 16%;
+	margin-top: 100px;
+	padding: 10px;
+	width: 1000px;
+	height: 850px;
+	position: relative;
+	box-sizing: border-box;
+}
+.prada-left1{
+	float: left;
+	width: 285px;
+	height: 410px;
+	background-color: #f8f8f8;
+	background-image: url('../images/恐龙头骨摆件.jpg');
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+}
+.prada-left-child{
+	width: 165px;
+	height: 70px;
+	position: absolute;
+	left: 60px;
+	bottom: 13px;
+	text-align: center;
+}
+.prada-left2{
+	float: left;
+	width: 480px;
+	height: 830px;
+	margin-left: 10px;
+	background: url('../images/合成萤石.jpg');
+	background-position: center center;
+	background-size: cover;
+}
+.prada-left3{
+	width: 285px;
+	height: 410px;
+	position: relative;
+	left: 0;
+	top: 415px;
+	margin-top: 5px;
+	background: url('../images/史前化石冰箱贴.jpg') no-repeat;
+	 background-position: center center;
+	background-size: cover;  
+}
+.prada-left4{
+	width: 195px;
+	height: 410px;
+	float: right;
+	position: relative;
+	top: -415px;
+	background-position: center center;
+	background-size: cover;
+}
+.wrapper-text-left h1 {
+
+    font-weight: bold;
+	padding-left: 10px;
+}
+.wrapper-text-left p{
+	font-family:'寰蒋闆呴粦';
+	padding-left: 25px;
+	font-weight: 500;
+}
+.wrapper-text-left a:hover, a:focus, a:active{
+	text-decoration: none;
+	toutline: none;
+	color: #000;
+}
+
+.prada-right{
+	
+	margin-left: 30%;
+	margin-top: 100px;
+	padding: 10px;
+	width: 1000px;
+	height: 850px;
+	position: relative;
+	box-sizing: border-box;
+}
+.prada-right1{
+	clear: both;
+	float: right;
+	width: 285px;
+	height: 410px;
+	background-color: #f8f8f8;
+	background-image: url('../images/yi2.jpg');
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+}
+.prada-right-child{
+	width: 165px;
+	height: 70px;
+	position: absolute;
+	line-height: 15px;
+	left: 60px;
+	bottom: 13px;
+	text-align: center;
+}
+.prada-right2{
+	width: 480px;
+	height: 830px;
+	margin-right: 10px;
+	position: relative;
+	right: -205px;
+	background: url('../images/yi1.jpg');
+	background-position: center center;
+	background-size: cover;
+}
+.prada-right3{
+	width: 285px;
+	height: 410px;
+	position: relative;
+	float: right;
+	margin-top: 5px;
+	top: 415px;
+	right: -285px;
+	background: url('../images/yi3.jpg') no-repeat;
+	 background-position: center center;
+	background-size: cover;  
+}
+.prada-right4{
+	width: 195px;
+	height: 410px;
+	position: relative;
+	top: -830px;
+	background-position: center center;
+	background-size: cover;
+	text-align: right;
+}
+.wrapper-text-right h1 {
+    font-weight: bold;
+	padding-right: 15px;
+}
+.wrapper-text-right p{
+	font-family:'寰蒋闆呴粦';
+	padding-right: 25px;
+	font-weight: 500;
+}
+.wrapper-text-right a:hover, a:focus, a:active{
+	text-decoration: none;
+	toutline: none;
+	color: #000;
+}
+
+
+
+.prada-left-sec{
+	margin-left: 16%;
+	margin-top: 100px;
+	padding: 10px;
+	width: 1000px;
+	height: 850px;
+	position: relative;
+	box-sizing: border-box;
+}
+.prada-left-sec .prada-left1{
+	float: left;
+	width: 285px;
+	height: 410px;
+	background-color: #f8f8f8;
+	background-image: url('../images/xie2.jpg');
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+}
+.prada-left-sec .prada-left-child{
+	width: 165px;
+	height: 70px;
+	position: absolute;
+	left: 60px;
+	bottom: 13px;
+	text-align: center;
+}
+.prada-left-sec>.prada-left2{
+	float: left;
+	width: 480px;
+	height: 830px;
+	margin-left: 10px;
+	background: url('../images/xie1.jpg');
+	background-position: center center;
+	background-size: cover;
+}
+.prada-left-sec .prada-left3{
+	width: 285px;
+	height: 410px;
+	position: relative;
+	left: 0;
+	top: 415px;
+	margin-top: 5px;
+	background: url('../images/xie3.jpg') no-repeat;
+	 background-position: center center;
+	background-size: cover;  
+}
+.prada-left-sec .prada-left4{
+	width: 195px;
+	height: 410px;
+	float: right;
+	position: relative;
+	top: -415px;
+	background-position: center center;
+	background-size: cover;
+}
+.prada-left-sec .wrapper-text-left h1 {
+
+    font-weight: bold;
+	padding-left: 10px;
+}
+.prada-left-sec .wrapper-text-left p{
+	font-family:'寰蒋闆呴粦';
+	padding-left: 25px;
+	font-weight: 500;
+}
+.prada-left-sec .wrapper-text-left a:hover, a:focus, a:active{
+	text-decoration: none;
+	toutline: none;
+	color: #000;
+}
+
+.prada-right-sec{
+	
+	margin-left: 30%;
+	margin-top: 100px;
+	padding: 10px;
+	width: 1000px;
+	height: 850px;
+	position: relative;
+	box-sizing: border-box;
+}
+.prada-right-sec .prada-right1{
+	clear: both;
+	float: right;
+	width: 285px;
+	height: 410px;
+	background-color: #f8f8f8;
+	background-image: url('../images/pei2.jpg');
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+}
+.prada-right-sec .prada-right-child{
+	width: 165px;
+	height: 70px;
+	position: absolute;
+	left: 60px;
+	bottom: 13px;
+	text-align: center;
+}
+.prada-right-sec .prada-right2{
+	width: 480px;
+	height: 830px;
+	margin-right: 10px;
+	position: relative;
+	right: -205px;
+	background: url('../images/pei1.jpg');
+	background-position: center center;
+	background-size: cover;
+}
+.prada-right-sec .prada-right3{
+	width: 285px;
+	height: 410px;
+	position: relative;
+	float: right;
+	margin-top: 5px;
+	top: 415px;
+	right: -285px;
+	background: url('../images/pei3.jpg') no-repeat;
+	 background-position: center center;
+	background-size: cover;  
+}
+.prada-right-sec .prada-right4{
+	width: 195px;
+	height: 410px;
+	position: relative;
+	top: -830px;
+	background-position: center center;
+	background-size: cover;
+	text-align: right;
+}
+.prada-right-sec .wrapper-text-right h1 {
+    font-weight: bold;
+	padding-right: 15px;
+}
+.prada-right-sec .wrapper-text-right p{
+	font-family:'寰蒋闆呴粦';
+	padding-right: 25px;
+	font-weight: 500;
+}
+.prada-right-sec .wrapper-text-right a:hover, a:focus, a:active{
+	text-decoration: none;
+	toutline: none;
+	color: #000;
 }

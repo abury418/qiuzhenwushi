@@ -4,13 +4,17 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.javaee.bean.Dish;
+import com.javaee.bean.User;
 
 public interface IDishServ {
 	
-	public Map<Dish,Integer> fetchAlldishsByMenuId(String menuid);
-	public Dish fetchDishById(String dishid);
-	public ArrayList<Dish> fetchAlldishsByDiningId(String diningid);
-	
-	/*public ArrayList findDishPageList(int pageNo, int pageSize);
-	public int getTotalRecords();*/
+	public ArrayList findDishPageList(int pageNo, int pageSize);
+	public int getTotalRecords();
+	public Dish findDishDetails(int dishid);
+
+	boolean validateDish(Dish dish);
+	public void updateDish(Dish dish);
+	public void deleteDish(Dish dish);
+	public void insertDish(Dish dish);
+
 }

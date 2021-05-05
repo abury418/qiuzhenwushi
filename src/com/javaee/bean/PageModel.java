@@ -34,12 +34,13 @@ public class PageModel<T> {
 		this.list = list;
 	}
 	
-	public PageModel(int pageSize, int totalRecords, int pageNo, ArrayList<T> list) {
-		this.pageSize = pageSize;
+	public PageModel(int totalRecords,int pageNo,int pageSize,ArrayList<T> list) {
 		this.totalRecords = totalRecords;
 		this.pageNo = pageNo;
+		this.pageSize = pageSize;
 		this.list = list;
 	}
+
 	
 	/**
 	 * ¼ÆËãÒ³Êý
